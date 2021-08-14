@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // Initial background color of the view
+        view.backgroundColor = UIColor.lightGray
+        
         // label
         let label = UILabel()
         label.frame = CGRect(x: 150, y: 150, width: 60, height: 60)
@@ -55,22 +58,37 @@ class ViewController: UIViewController {
         
     }
     
-    // Function to increment the counter
+    // Method to increment the counter
     @objc func incrementCount() {
         
         self.count += 1
         self.label.text = "\(self.count)"
         self.labelTwo.text = "\(self.count)"
+        toggleBackground()
         
     }
     
-    //Function to decrement the counter
+    // Method to decrement the counter
     @objc func decrementCount() {
         
         self.count -= 1
         self.label.text = "\(self.count)"
         self.labelTwo.text = "\(self.count)"
+        toggleBackground()
         
+    }
+    
+    
+    // Method to toggle background color of the view
+    func toggleBackground() {
+        if view.backgroundColor == UIColor.lightGray {
+            
+            view.backgroundColor = UIColor.darkGray
+            
+        } else {
+            
+            view.backgroundColor = UIColor.lightGray
+        }
     }
 
 
